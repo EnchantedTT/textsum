@@ -1,6 +1,6 @@
 #encoding:utf-8
 import utils
-import logging
+#import logging
 
 class Topic():
 	def __init__(self, topic, comma=False, num=False):

@@ -2,14 +2,14 @@ import json
 from flask import Flask, request, jsonify
 from flask_json import FlaskJSON, JsonError
 import logging
-import settings
+#import settings
 import utils
 import textsum
 
 app = Flask(__name__)
 FlaskJSON(app)
 
-LOGGER = logging.getLogger("textsum.server")
+#LOGGER = logging.getLogger("textsum.server")
 
 @app.route("/summary", methods=['POST'])
 def getSummarization():
