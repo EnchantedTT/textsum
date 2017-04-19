@@ -5,7 +5,6 @@ import requests
 import utils
 import json
 from topic import Topic
-import zmq, sys
 
 MODEL_URL = "http://0.0.0.0:7784/translator/translate"
 
@@ -44,15 +43,6 @@ def getModelResults(topics):
 			return results
 	except:
 		return None
-	return None
-
-SOCK = zmq.Context().socket(zmq.REQ)
-SOCK.connect("tcp://127.0.0.1:5556")
-def getModelResultsByTCP(topics):
-	src_list = map(lambda x:stringToDict(x), topics)
-	input_data = json.dumps(src_list)
-	SOCK.send(input_data)
-	SOCK.recv()
 	return None
 
 def getIndex(w, l):
