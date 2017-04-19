@@ -7,7 +7,7 @@ import json
 from topic import Topic
 import zmq, sys
 
-MODEL_URL = "http://10.85.11.98:7784/translator/translate"
+MODEL_URL = "http://0.0.0.0:7784/translator/translate"
 
 HEADERS = {'content-type': "application/json",}
 
