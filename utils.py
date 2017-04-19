@@ -1,6 +1,6 @@
 #encoding:utf-8
-import logging
-import settings
+#import logging
+#import settings
 import jieba
 import sys
 import os
