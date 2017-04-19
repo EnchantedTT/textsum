@@ -1,1 +1,3 @@
-add readme
+TEXTSUM SERVER
+
+this is a flask server for short textsum which requests seq2seq model results from a restserver.
