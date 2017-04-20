@@ -16,7 +16,7 @@ def getSummarization():
 	try:
 		result = dict()
 		raw = request.get_json(force=True)
-		topics = raw['texts']
+		topics = raw['text']
 		output = textsum.getSummarizations(topics)
 		result['output'] = output
 	except Exception as e:
