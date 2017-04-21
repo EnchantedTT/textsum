@@ -30,7 +30,7 @@ def index():
 	return render_template("index.html")
 
 @app.route("/summary/one",methods = ['GET', 'POST'])
-def login():
+def getSummarizationForOne():
 	if request.method == "POST":
 		try:
 			username = request.form.get('username')
@@ -43,19 +43,6 @@ def login():
 	else:
 		return "<h1>Invalid Input.</h1>"
 
-@app.route("/summary/one", methods=['GET'])
-def getSummarizationForOne():
-	try:
-		raw = request.args
-		result = dict()
-		topics = [raw[0][1]]
-		output = textsum.getSummarizations(topics)
-		result['output'] = output
-	except Exception as e:
-		#LOGGER.info("Summarization Server: " + str(type(e)))
-		raise JsonError(description='Invalid Input.')
-	return render_template('index.html', name=name)
-
 if __name__ == "__main__":
-	#app.run(host='0.0.0.0', port=50110, threaded=True)
-	app.run(host='0.0.0.0', port=50110)#, debug=True)
+	app.run(host='0.0.0.0', port=50110)
+	#app.run(host='0.0.0.0', port=50110, debug=True)
